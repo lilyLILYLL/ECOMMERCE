@@ -1,0 +1,22 @@
+.counter {
+    display: flex;
+    flex-direction: row;
+}
+.counter .square {
+    border: 1px solid black;
+    padding: 1rem;
+}
+
+.counter .count {
+    font-size: x-large;
+    font-weight: bold;
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+    width: 50px;
+    text-align: center;
+}
+
+.counter .icon {
+    cursor: pointer;
+    background-color: white;
+}

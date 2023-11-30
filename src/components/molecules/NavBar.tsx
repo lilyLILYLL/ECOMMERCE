@@ -15,12 +15,13 @@ export const NavBar = () => {
                     className="navbar-logo"
                     src={NewLogo2}
                     alt="Logo"
+                    onClick={() => window.scrollTo(0, 0)}
                 />
             </NavLink>
 
             <div className="navbar-menu">
                 <Link to="/">HOME</Link>
-                <Link to="/categories/all">CATEGORIES</Link>
+                <Link to="/categories">CATEGORIES</Link>
 
                 <IconShoppingCart className="cart-icon" />
                 <IconMenu2 className="menu-icon" />

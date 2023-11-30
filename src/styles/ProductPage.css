@@ -1,0 +1,15 @@
+.product-page {
+    padding: 7rem;
+    padding-top: 10rem;
+    padding-bottom: 1rem;
+}
+.product-page .title {
+    position: absolute;
+}
+.product-page .info {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 650px);
+    justify-content: space-around;
+    padding-bottom: 5rem;
+}

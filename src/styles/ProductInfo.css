@@ -1,0 +1,22 @@
+.product-info {
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 10%;
+    padding-top: 30%;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.product-info .quantity {
+    display: flex;
+    flex-direction: row;
+
+    align-items: center;
+    justify-content: space-between;
+}
+
+.product-info .buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+}

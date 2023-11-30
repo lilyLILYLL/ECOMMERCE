@@ -44,16 +44,12 @@ export const CategoriesPage = (props: Props) => {
             {/* CATEGORY LIST */}
             <div className="categories-list">
                 {categories.map((category, index) => (
-                    <Link
-                        to={`/categories/${category}`}
+                    <Button
+                        buttonType="light"
+                        title={category}
+                        onClick={() => handleChoosingCategory(category)}
                         key={index}
-                    >
-                        <Button
-                            buttonType="light"
-                            title={category}
-                            onClick={() => handleChoosingCategory(category)}
-                        />
-                    </Link>
+                    />
                 ))}
             </div>
 

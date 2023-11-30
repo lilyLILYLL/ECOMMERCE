@@ -2,15 +2,16 @@ import "@/styles/Link.css";
 
 import { NavLink } from "react-router-dom";
 type Props = {
-    children: string | JSX.Element;
+    children: string | JSX.Element[];
     to: string;
+    containerClassName?: string;
 };
 
-export const Link = ({ children, to }: Props) => {
+export const Link = ({ children, to, containerClassName }: Props) => {
     return (
         <NavLink
             to={to}
-            className={`link ${({ isActive }: { isActive: boolean }) =>
+            className={`${containerClassName} link ${({ isActive }: { isActive: boolean }) =>
                 isActive ? "active" : " "}`}
         >
             {children}

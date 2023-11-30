@@ -1,5 +1,6 @@
 import { ProductItemType } from "@/shared";
 import { ProductItemCard } from "@/components/molecules";
+import { Link } from "@/components/atoms";
 import "@/styles/ProductList.css";
 type Props = {
     items: ProductItemType[];
@@ -13,7 +14,9 @@ export const ProductList = ({ items, listType = "grid" }: Props) => {
                 <ProductItemCard
                     key={index}
                     item={item}
-                    containerClassName={`${listType === "horizontal" ? "horizontal-flex-item" : ""}`}
+                    containerClassName={`${
+                        listType === "horizontal" ? "horizontal-flex-item" : ""
+                    }`}
                 />
             ))}
         </div>

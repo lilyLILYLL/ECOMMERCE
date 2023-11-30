@@ -11,7 +11,7 @@ export const ProductBanner = (props: Props) => {
             <Image
                 src={props.imgSrc}
                 alt={props.bannerText}
-                containerClassName="banner-image"
+                className="banner-image"
             />
             <Text
                 value={props.bannerText}

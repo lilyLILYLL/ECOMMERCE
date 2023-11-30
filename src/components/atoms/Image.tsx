@@ -1,19 +1,16 @@
 type Props = {
     src: string;
     alt: string;
-    containerClassName?: string;
     objectFit?: "contain" | "cover" | "none" | "fill";
-    height?: string;
-    width?: string;
-};
+} & React.DetailedHTMLProps<React.ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement>;
 
-export const Image = (props: Props) => {
+export const Image = ({ objectFit = "cover", ...props }: Props) => {
     return (
         <img
-            style={{ objectFit: props.objectFit || "cover", width: props.width || "100%", height: props.height || "100%" }}
-            src={props.src}
-            alt={props.alt}
-            className={props.containerClassName}
+            width={"100%"}
+            height={"100%"}
+            {...props}
+            style={{ objectFit }}
         />
     );
 };
