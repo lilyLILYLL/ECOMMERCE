@@ -1,0 +1,14 @@
+.home {
+    padding: 8rem;
+    padding-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: 8rem;
+}
+
+@media screen and (max-width: 1200px) {
+    .home {
+        padding: 1.5rem;
+        padding-top: 8rem;
+    }
+}

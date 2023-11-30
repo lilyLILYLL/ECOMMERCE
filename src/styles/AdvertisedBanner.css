@@ -1,0 +1,28 @@
+.advertised-banner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 100%);
+    width: 100%;
+    height: 400px;
+    background-color: #f5f5f5;
+}
+.advertised-banner .description {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: center;
+    padding: 5rem;
+}
+
+.advertised-banner .reverse {
+    order: 1;
+}
+
+@media screen and (max-width: 600px) {
+    .advertised-banner {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+}

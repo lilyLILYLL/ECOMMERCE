@@ -1,0 +1,44 @@
+/* GRID  LIST */
+.product-list-grid {
+    padding-top: 1rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    justify-content: space-between;
+    gap: 20px;
+}
+
+@media screen and (max-width: 750px) {
+    .product-list-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .product-list-grid {
+        grid-template-columns: repeat(2, 48%);
+        gap: 10px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .product-list-grid {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+}
+
+/* HORIZONTAL LIST */
+
+.product-list-horizontal {
+    padding-top: 1rem;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: no;
+    overflow-x: scroll;
+    gap: 20px;
+}
+.horizontal-flex-item {
+    flex: 0 0 220px;
+}

@@ -1,0 +1,27 @@
+.footer {
+    background-color: gray;
+    height: 200px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 100px;
+    gap: 10px;
+}
+.footer .subcribe-section {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.footer > .subcribe-section > input {
+    width: 200px;
+    padding: 0.8rem;
+}
+
+.credit {
+    background-color: black;
+    text-align: center;
+    padding: 1rem;
+}

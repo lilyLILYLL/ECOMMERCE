@@ -1,0 +1,23 @@
+.product-banner {
+    position: relative;
+    background-color: black;
+}
+.banner-image {
+    opacity: 0.7;
+}
+.banner-image:hover {
+    opacity: 0.5;
+    cursor: pointer;
+}
+
+.banner-text {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 1rem;
+}
+
+@media screen and (max-width: 600px) {
+    .banner-text {
+        font-size: 20px;
+    }
+}

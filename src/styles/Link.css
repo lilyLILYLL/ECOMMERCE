@@ -1,0 +1,19 @@
+.link {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: black;
+}
+
+.link:hover {
+    font-size: 1.4rem;
+}
+
+.active {
+    color: red;
+}
+
+@media screen and (max-width: 600px) {
+    .link {
+        display: none;
+    }
+}
