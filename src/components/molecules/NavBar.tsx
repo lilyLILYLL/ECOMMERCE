@@ -4,8 +4,10 @@ import { NewLogo2 } from "@/assets";
 import { IconShoppingCart, IconMenu2 } from "@tabler/icons-react";
 import { Link } from "@/components/atoms";
 import { useDimensions } from "@/hooks";
-
-export const NavBar = () => {
+type Props = {
+    toggleCartSideBar: () => void;
+};
+export const NavBar = (props: Props) => {
     const dimensions = useDimensions();
 
     return (
@@ -23,7 +25,10 @@ export const NavBar = () => {
                 <Link to="/">HOME</Link>
                 <Link to="/categories">CATEGORIES</Link>
 
-                <IconShoppingCart className="cart-icon" />
+                <IconShoppingCart
+                    className="cart-icon"
+                    onClick={props.toggleCartSideBar}
+                />
                 <IconMenu2 className="menu-icon" />
             </div>
         </div>

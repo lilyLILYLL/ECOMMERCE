@@ -1,15 +1,19 @@
 import { NavBar } from "@/components/molecules";
 import { Footer } from "@/components/organisms";
 import { Outlet } from "react-router-dom";
-import { store, useAppSelector } from "@/redux";
+import { SideShoppingCart } from "@/components/templates";
 import { useLocation } from "react-router-dom";
-import React from "react";
+import React, { CSSProperties } from "react";
 
 function App() {
-    const state = useAppSelector((state) => state.cartSlice);
-    console.log(state);
     const { pathname } = useLocation();
+    const [isCartOpened, setIsCartOpened] = React.useState(false);
 
+    const handleToggleShoppingCartSideBar = () => {
+        console.log("Now", isCartOpened);
+        setIsCartOpened((prev) => !prev);
+    };
+    console.log(isCartOpened);
     // Scroll to the top of screen when the page os reload
     React.useEffect(() => {
         window.scrollTo(0, 0);
@@ -17,9 +21,14 @@ function App() {
 
     return (
         <div>
-            <NavBar />
+            <NavBar toggleCartSideBar={handleToggleShoppingCartSideBar} />
             <Outlet />
             <Footer />
+
+            <SideShoppingCart
+                isOpen={isCartOpened}
+                toggleCart={handleToggleShoppingCartSideBar}
+            />
         </div>
     );
 }

@@ -9,8 +9,9 @@ type Props = {};
 
 export const ProductPage = (props: Props) => {
     const params = useParams<{ id: string }>();
-    const [product, setProduct] = React.useState<ProductItemType>();
 
+    const [product, setProduct] = React.useState<ProductItemType>();
+    console.log(product);
     React.useEffect(() => {
         const chosenProduct = items.find((item) => item.id.toString() === params.id);
         setProduct(chosenProduct);
@@ -19,7 +20,7 @@ export const ProductPage = (props: Props) => {
     return (
         <div className="product-page">
             {product ? (
-                <div>
+                <div className="content">
                     {/* PRODUCT NAME*/}
                     <Title
                         title={product.description}

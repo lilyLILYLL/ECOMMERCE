@@ -13,7 +13,7 @@ export const ImagePreview = (props: Props) => {
                 <Image
                     src={props.images[chosenImg]}
                     alt={props.images[chosenImg]}
-                    objectFit="cover"
+                    objectFit="contain"
                 />
             </div>
             <div className="img-list">

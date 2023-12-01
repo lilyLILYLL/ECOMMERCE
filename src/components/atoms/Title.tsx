@@ -1,5 +1,3 @@
-import React from "react";
-
 type Props = {
     title: string;
     containerClassName?: string;
@@ -9,7 +7,7 @@ export const Title = (props: Props) => {
     return (
         <div
             style={{
-                width: "80%",
+                width: "90%",
                 textAlign: "center",
                 fontWeight: "bold",
                 fontSize: "2rem",

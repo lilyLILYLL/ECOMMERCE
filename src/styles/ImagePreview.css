@@ -1,25 +1,24 @@
 .img-preview {
-    padding: 1rem;
     width: 100%;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    gap: 5%;
     justify-content: center;
     align-items: center;
-    justify-items: center;
+
+    justify-content: flex-end;
+    gap: 2rem;
 }
 
 .img-preview .big-img {
     padding-left: 4rem;
     padding-right: 4rem;
-    width: calc(100% / 2);
-    height: calc(100% / 1.5);
+    width: 80%;
+    height: 70%;
 }
 
 .img-preview .img-list {
     display: grid;
-    grid-template-columns: repeat(3, 20%);
+    grid-template-columns: repeat(3, 18%);
     gap: 20px;
     justify-content: center;
 }

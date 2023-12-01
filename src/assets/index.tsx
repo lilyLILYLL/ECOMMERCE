@@ -131,3 +131,4 @@ export {
 };
 export * from "./img/header";
 export * from "./img/banner";
+export * from "./img/cart";

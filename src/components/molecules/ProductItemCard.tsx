@@ -11,7 +11,7 @@ type Props = {
 
 export const ProductItemCard = ({ item, containerClassName }: Props) => {
     const { pathname } = useLocation();
-    console.log(pathname);
+
     return (
         <Link
             to={`/categories/product/${item.id}`}

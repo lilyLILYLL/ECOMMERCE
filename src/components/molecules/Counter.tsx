@@ -5,9 +5,10 @@ import { IconMinus, IconPlus } from "@tabler/icons-react";
 type Props = {
     count: number;
     setCount: (e: any) => void;
+    size?: "md" | "sm";
 };
 
-export const Counter = ({ count, setCount }: Props) => {
+export const Counter = ({ count, setCount, size = "md" }: Props) => {
     const handleSettingCount = React.useCallback((value: number) => {
         setCount(value);
     }, []);

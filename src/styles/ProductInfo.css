@@ -1,22 +1,30 @@
 .product-info {
     background-color: rgba(0, 0, 0, 0.1);
     padding: 10%;
-    padding-top: 30%;
     display: flex;
     flex-direction: column;
     gap: 4rem;
+    justify-content: center;
+}
+
+@media screen and (max-width: 1000px) {
+    .product-info {
+        padding: 2rem;
+    }
 }
 
 .product-info .quantity {
     display: flex;
     flex-direction: row;
-
     align-items: center;
     justify-content: space-between;
 }
 
 .product-info .buttons {
+    width: 100%;
     display: flex;
     flex-direction: row;
     gap: 2rem;
+    justify-content: center;
+    align-items: center;
 }
