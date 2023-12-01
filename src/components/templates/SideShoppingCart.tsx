@@ -18,12 +18,16 @@ export const SideShoppingCart = (props: Props) => {
     }, []);
 
     return (
-        <div className={`overlay-page${props.isOpen ? "" : "hidden"}`}>
+        <div className={`${props.isOpen ? "overlay-page" : ""}`}>
+            <div
+                onClick={handleToggleCarSideBar}
+                className="overlay"
+            />
             <div className={`cart-sidebar ${props.isOpen ? "" : "hidden"}`}>
                 {/* SIDE BAR HEADER */}
                 <div className="header">
                     <Text
-                        value="Your Shopping Cart (0)"
+                        value={`Your Shopping Cart ( ${cart.length} )`}
                         size="md"
                         fontWeight={700}
                     />
@@ -35,7 +39,7 @@ export const SideShoppingCart = (props: Props) => {
                 </div>
 
                 {!!cart.length && (
-                    <div>
+                    <div className="non-empty-cart">
                         {cart.map((item, index) => (
                             <AddedItemInfo
                                 item={item}

@@ -22,13 +22,16 @@ export const cartSlice = createSlice({
             state.push(action.payload);
         },
         removeFromCart(state, action: PayloadAction<number>) {
-            state = state.filter((item) => item.id !== action.payload);
+            return state.filter((item) => item.id !== action.payload);
         },
-        updateCart(state, action: PayloadAction<{ id: number; quantity: number }>) {
-            const id = action.payload.id;
-            state[id] = { ...state[id], quantity: action.payload.quantity };
+        updateItemQuantity(
+            state,
+            action: PayloadAction<{ id: number; quantity: number }>
+        ) {
+            const productIndex = state.findIndex((item) => item.id === action.payload.id);
+            state[productIndex].quantity = action.payload.quantity;
         },
     },
 });
 
-export const { addToCart, removeFromCart, updateCart } = cartSlice.actions;
+export const { addToCart, removeFromCart, updateItemQuantity } = cartSlice.actions;

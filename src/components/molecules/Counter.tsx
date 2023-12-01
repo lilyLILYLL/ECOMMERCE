@@ -13,22 +13,32 @@ export const Counter = ({ count, setCount, size = "md" }: Props) => {
         setCount(value);
     }, []);
 
+    // Handle Minus Operation: Stop when value reaches to 1
     const handleMinus = () => {
         if (count === 1) return;
         handleSettingCount(count - 1);
     };
     return (
         <div className="counter">
+            {/* MINUS ICON */}
             <IconMinus
-                className="square icon"
+                className={`${size === "md" ? "square" : ""} icon`}
                 size={30}
                 onClick={handleMinus}
+                style={{ backgroundColor: "transparent" }}
             />
-            <div className="square count">{count.toLocaleString()}</div>
+
+            {/* VALUE */}
+            <div className={`${size === "md" ? "square" : ""} count`}>
+                {count.toLocaleString()}
+            </div>
+
+            {/* PLUS ICON */}
             <IconPlus
-                className="square icon"
+                className={`${size === "md" ? "square" : ""} icon`}
                 size={30}
                 onClick={() => handleSettingCount(count + 1)}
+                style={{ backgroundColor: "transparent" }}
             />
         </div>
     );
