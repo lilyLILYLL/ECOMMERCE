@@ -4,14 +4,21 @@ import { NewLogo2 } from "@/assets";
 import { IconShoppingCart, IconMenu2 } from "@tabler/icons-react";
 import { Link } from "@/components/atoms";
 import { useDimensions } from "@/hooks";
+import { useAppSelector } from "@/redux";
 type Props = {
     toggleCartSideBar: () => void;
 };
 export const NavBar = (props: Props) => {
     const dimensions = useDimensions();
+    const cart = useAppSelector((state) => state.cartSlice.items);
 
     return (
-        <div className={`navbar ${dimensions.scrollY === 0 ? "big-padding" : "small-padding"}`}>
+        <div
+            className={`navbar ${
+                dimensions.scrollY === 0 ? "big-padding" : "small-padding"
+            }`}
+        >
+            {/* LOGO */}
             <NavLink to="/">
                 <img
                     className="navbar-logo"
@@ -22,13 +29,18 @@ export const NavBar = (props: Props) => {
             </NavLink>
 
             <div className="navbar-menu">
+                {/* PAGES */}
                 <Link to="/">HOME</Link>
                 <Link to="/categories">CATEGORIES</Link>
 
-                <IconShoppingCart
-                    className="cart-icon"
-                    onClick={props.toggleCartSideBar}
-                />
+                {/* CART ICON */}
+                <div
+                    data-length={cart.length}
+                    className={`cart-icon ${!cart.length ? "" : "with-items"}`}
+                >
+                    <IconShoppingCart onClick={props.toggleCartSideBar} />
+                </div>
+
                 <IconMenu2 className="menu-icon" />
             </div>
         </div>

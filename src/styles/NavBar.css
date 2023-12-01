@@ -11,7 +11,7 @@
     right: 0;
     padding-left: 8rem;
     padding-right: 8rem;
-    transition: padding 0.2s;
+    transition: padding 0.5s;
 }
 .big-padding {
     padding-top: 1rem;
@@ -25,7 +25,7 @@
 @media screen and (max-width: 1200px) {
     .navbar {
         padding-left: 1rem;
-        padding-right: 1rem;
+        padding-right: 2rem;
     }
 }
 
@@ -41,8 +41,26 @@
     gap: 20px;
 }
 
-.navbar .cart-icon:hover {
+.navbar .cart-icon {
     cursor: pointer;
+    position: relative;
+}
+
+.navbar .with-items::after {
+    content: attr(data-length);
+    background-color: #b6002c;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 100%;
+    top: -18px;
+    right: -18px;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    padding: 1.5px;
+
+    font-style: italic;
 }
 
 @media screen and (min-width: 600px) {
@@ -51,6 +69,6 @@
     }
 }
 
-.navbar .menu-icon:hover {
+.navbar .menu-icon {
     cursor: pointer;
 }

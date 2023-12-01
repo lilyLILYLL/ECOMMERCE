@@ -3,14 +3,14 @@
     display: grid;
     grid-template-columns: 1fr 2fr;
     border: 1px solid black;
+    height: fit-content;
 }
 
 .added-item .content {
     background-color: rgba(0, 0, 0, 0.1);
-    padding: 1rem;
+    padding: 0.5rem;
     display: flex;
     flex-direction: column;
-
     justify-content: space-around;
 }
 

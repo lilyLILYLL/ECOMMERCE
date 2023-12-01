@@ -5,13 +5,17 @@ import { Text, Button, Image } from "@/components/atoms";
 import { EmptyCart } from "@/assets";
 import { useAppSelector } from "@/redux";
 import { AddedItemInfo } from "../organisms";
+
 type Props = {
     isOpen: boolean;
     toggleCart: () => void;
 };
 
 export const SideShoppingCart = (props: Props) => {
-    const cart = useAppSelector((state) => state.cartSlice);
+    const { items, totalPrice } = useAppSelector((state) => state.cartSlice);
+
+    console.log();
+
     // Handle toggle cart side bar
     const handleToggleCarSideBar = React.useCallback(() => {
         props.toggleCart();
@@ -27,7 +31,7 @@ export const SideShoppingCart = (props: Props) => {
                 {/* SIDE BAR HEADER */}
                 <div className="header">
                     <Text
-                        value={`Your Shopping Cart ( ${cart.length} )`}
+                        value={`Your Shopping Cart ( ${items.length} )`}
                         size="md"
                         fontWeight={700}
                     />
@@ -38,19 +42,41 @@ export const SideShoppingCart = (props: Props) => {
                     />
                 </div>
 
-                {!!cart.length && (
+                {/* NON-EMPTY CART */}
+                {!!items.length && (
                     <div className="non-empty-cart">
-                        {cart.map((item, index) => (
-                            <AddedItemInfo
-                                item={item}
-                                key={index}
+                        <div className="item-list">
+                            {items.map((item, index) => (
+                                <AddedItemInfo
+                                    item={item}
+                                    key={index}
+                                />
+                            ))}
+                        </div>
+                        <div className="cart-summary">
+                            <div className="sub-total">
+                                <Text
+                                    value="Subtotal"
+                                    size="md"
+                                    fontWeight={700}
+                                />
+                                <Text
+                                    value={`$${totalPrice.toFixed(2).toLocaleString()}`}
+                                    size="md"
+                                    fontWeight={700}
+                                />
+                            </div>
+
+                            <Button
+                                title="Go to Checkout"
+                                buttonType="danger"
                             />
-                        ))}
+                        </div>
                     </div>
                 )}
 
                 {/* EMPTY CART */}
-                {!cart.length && (
+                {!items.length && (
                     <div className="empty-cart">
                         <Image
                             src={EmptyCart}

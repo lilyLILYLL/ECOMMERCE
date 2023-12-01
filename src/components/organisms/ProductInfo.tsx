@@ -26,7 +26,6 @@ export const ProductInfo = ({ product }: Props) => {
                 quantity,
             })
         );
-        alert("Product added to cart");
     };
     return (
         <div className="product-info">
