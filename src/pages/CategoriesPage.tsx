@@ -2,15 +2,17 @@ import "@/styles/CategoriesPage.css";
 import React from "react";
 import { GoBackIcon, Title, Button, Link } from "@/components/atoms";
 import { categories, items } from "@/shared";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams, NavLink } from "react-router-dom";
 import { ProductList } from "@/components/organisms";
 
 type Props = {};
 
 export const CategoriesPage = (props: Props) => {
     const navigate = useNavigate();
+    const { id: params } = useParams();
+
     const [products, setProducts] = React.useState(items);
-    const [chosenCategory, setChosenCategory] = React.useState(categories[0]);
+    const [chosenCategory, setChosenCategory] = React.useState(params || "all");
 
     // Handle Choosing a category
     const handleChoosingCategory = (category: string) => {
@@ -26,7 +28,9 @@ export const CategoriesPage = (props: Props) => {
         }
         // each category
         setProducts(
-            items.filter((item) => chosenCategory.toLocaleLowerCase().includes(item.category))
+            items.filter((item) =>
+                chosenCategory.toLocaleLowerCase().includes(item.category)
+            )
         );
     }, [chosenCategory]);
 
@@ -44,12 +48,14 @@ export const CategoriesPage = (props: Props) => {
             {/* CATEGORY LIST */}
             <div className="categories-list">
                 {categories.map((category, index) => (
-                    <Button
-                        buttonType="light"
-                        title={category}
-                        onClick={() => handleChoosingCategory(category)}
-                        key={index}
-                    />
+                    <NavLink href={`/categories/${category}`}>
+                        <Button
+                            buttonType="light"
+                            title={category}
+                            onClick={() => handleChoosingCategory(category)}
+                            key={index}
+                        />
+                    </NavLink>
                 ))}
             </div>
 

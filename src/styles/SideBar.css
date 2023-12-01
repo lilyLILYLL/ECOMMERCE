@@ -1,0 +1,33 @@
+.side-bar {
+    background-color: white;
+    width: 100%;
+    height: 100vh;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 40%;
+    gap: 2rem;
+    transition: all 0.5s ease-in-out;
+}
+.sidebar-hidden {
+    display: none;
+}
+.side-bar .x-icon {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+}
+
+.side-bar .page {
+    color: black;
+    cursor: pointer;
+}
+.side-bar .page:hover {
+    text-decoration: underline;
+}

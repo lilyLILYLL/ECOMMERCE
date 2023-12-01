@@ -21,7 +21,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
                             element={<HomePage />}
                         />
                         <Route
-                            path="/categories"
+                            path="/categories/:id"
                             element={<CategoriesPage />}
                         />
                         <Route

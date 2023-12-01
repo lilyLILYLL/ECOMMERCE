@@ -7,10 +7,12 @@ import { useDimensions } from "@/hooks";
 import { useAppSelector } from "@/redux";
 type Props = {
     toggleCartSideBar: () => void;
+    toggleMobileSideBar: () => void;
 };
 export const NavBar = (props: Props) => {
     const dimensions = useDimensions();
     const cart = useAppSelector((state) => state.cartSlice.items);
+    const items_quantity = cart.map((item) => item.quantity).reduce((a, b) => a + b, 0);
 
     return (
         <div
@@ -31,17 +33,20 @@ export const NavBar = (props: Props) => {
             <div className="navbar-menu">
                 {/* PAGES */}
                 <Link to="/">HOME</Link>
-                <Link to="/categories">CATEGORIES</Link>
+                <Link to="/categories/all">CATEGORIES</Link>
 
                 {/* CART ICON */}
                 <div
-                    data-length={cart.length}
-                    className={`cart-icon ${!cart.length ? "" : "with-items"}`}
+                    data-length={items_quantity}
+                    className={`cart-icon ${!items_quantity ? "" : "with-items"}`}
                 >
                     <IconShoppingCart onClick={props.toggleCartSideBar} />
                 </div>
 
-                <IconMenu2 className="menu-icon" />
+                <IconMenu2
+                    className="menu-icon"
+                    onClick={props.toggleMobileSideBar}
+                />
             </div>
         </div>
     );

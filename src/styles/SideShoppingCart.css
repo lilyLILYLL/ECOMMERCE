@@ -7,10 +7,13 @@
     bottom: 0;
     z-index: 100;
 }
-.overlay {
+.overlay-page .overlay {
     height: 100vh;
     background-color: #00000075;
     transition: all 1s;
+}
+.overlay-page-hidden {
+    display: hidden;
 }
 
 .cart-sidebar {
@@ -38,8 +41,8 @@
 }
 @media screen and (max-width: 600px) {
     .cart-sidebar {
-        padding: 2rem 1rem 1rem;
-        width: calc(100% - 2rem);
+        padding: 2.5rem;
+        width: calc(100% - 5rem);
     }
 }
 

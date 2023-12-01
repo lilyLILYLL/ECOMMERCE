@@ -5,3 +5,4 @@ export * from "./Footer";
 export * from "./ImagePreview";
 export * from "./ProductInfo";
 export * from "./AddedItemInfo";
+export * from "./SideBar";

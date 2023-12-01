@@ -25,9 +25,15 @@ export const Footer = () => {
 
             <div className="credit">
                 <Text
-                    value="Design by Abderraouf"
+                    value={`Design by`}
                     color="white"
                 />
+                <a
+                    href="https://github.com/Abderraouf-Rahmani"
+                    target="_blank"
+                >
+                    Abderraouf
+                </a>
             </div>
         </div>
     );

@@ -14,7 +14,6 @@ export const ProductInfo = ({ product }: Props) => {
     const dispatch = useAppDisptch();
     const [quantity, setQuantity] = React.useState(1);
     const state = useAppSelector((state) => state.cartSlice);
-    console.log(state);
 
     const handleAddingAnItemToCart = () => {
         dispatch(

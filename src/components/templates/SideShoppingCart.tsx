@@ -22,7 +22,7 @@ export const SideShoppingCart = (props: Props) => {
     }, []);
 
     return (
-        <div className={`${props.isOpen ? "overlay-page" : ""}`}>
+        <div className={`${props.isOpen ? "overlay-page" : "overlay-page-hidden"}`}>
             <div
                 onClick={handleToggleCarSideBar}
                 className="overlay"

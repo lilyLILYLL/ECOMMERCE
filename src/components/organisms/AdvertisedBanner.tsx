@@ -1,6 +1,7 @@
 import { Text, Image, Button } from "@/components/atoms";
 import { useDimensions } from "@/hooks";
 import "@/styles/AdvertisedBanner.css";
+import { useNavigate } from "react-router-dom";
 
 type Props = {
     img: string;
@@ -10,6 +11,7 @@ type Props = {
 };
 
 export const AdvertisedBanner = (props: Props) => {
+    const navigate = useNavigate();
     const dimensions = useDimensions();
     return (
         <div className="advertised-banner">
@@ -23,9 +25,11 @@ export const AdvertisedBanner = (props: Props) => {
                     value={props.description || " "}
                     size="md"
                 />
+
                 <Button
                     title={"SHOP NOW"}
                     buttonType="secondary"
+                    onClick={() => navigate("/categories/all")}
                 />
             </div>
             {dimensions.width > 600 && (
