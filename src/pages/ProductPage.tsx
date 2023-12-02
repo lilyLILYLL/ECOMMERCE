@@ -14,7 +14,8 @@ export const ProductPage = (props: Props) => {
 
     const [product, setProduct] = React.useState<ProductItemType>();
     const [isNotificationVisibe, setIsNotificationVisible] = React.useState(false);
-    console.log(product);
+
+    // Filter products based on params
     React.useEffect(() => {
         const chosenProduct = items.find((item) => item.id.toString() === params.id);
         setProduct(chosenProduct);
