@@ -1,6 +1,6 @@
 import React from "react";
 import "@/styles/SideBar.css";
-import { Link, Title } from "@/components/atoms";
+import { Title } from "@/components/atoms";
 import { NavLink } from "react-router-dom";
 import { IconX } from "@tabler/icons-react";
 
@@ -14,8 +14,6 @@ export const SideBar = (props: Props) => {
         props.setIsOpen();
     }, []);
 
-    console.log(`side-bar${props.isOpen ? "" : "-hidden"}`);
-
     return (
         <div className={`side-bar ${props.isOpen ? "" : "sidebar-hidden"}`}>
             <IconX
@@ -23,13 +21,19 @@ export const SideBar = (props: Props) => {
                 className="x-icon"
                 onClick={handleTogglingSideBar}
             />
-            <NavLink to="/">
+            <NavLink
+                to="/"
+                onClick={handleTogglingSideBar}
+            >
                 <Title
                     title="Home"
                     containerClassName="page"
                 />
             </NavLink>
-            <NavLink to="/">
+            <NavLink
+                to="/categories/all"
+                onClick={handleTogglingSideBar}
+            >
                 <Title
                     title="CATEGORIES"
                     containerClassName="page"

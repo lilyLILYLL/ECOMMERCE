@@ -14,7 +14,8 @@ type Props = {
 export const SideShoppingCart = (props: Props) => {
     const { items, totalPrice } = useAppSelector((state) => state.cartSlice);
 
-    console.log();
+    // total quantity of items in the cart
+    const items_quantity = items.map((item) => item.quantity).reduce((a, b) => a + b, 0);
 
     // Handle toggle cart side bar
     const handleToggleCarSideBar = React.useCallback(() => {
@@ -31,7 +32,7 @@ export const SideShoppingCart = (props: Props) => {
                 {/* SIDE BAR HEADER */}
                 <div className="header">
                     <Text
-                        value={`Your Shopping Cart ( ${items.length} )`}
+                        value={`Your Shopping Cart ( ${items_quantity} )`}
                         size="md"
                         fontWeight={700}
                     />

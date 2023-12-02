@@ -1,9 +1,11 @@
+import React from "react";
 import "@/styles/ProductPage.css";
 import { useParams } from "react-router-dom";
 import { ProductItemType, items } from "@/shared";
-import React from "react";
 import { Title, Text } from "@/components/atoms";
 import { ImagePreview, ProductInfo, ProductList } from "@/components/organisms";
+import { NotificationMessage } from "@/components/molecules";
+import { IconCheck } from "@tabler/icons-react";
 
 type Props = {};
 
@@ -11,11 +13,16 @@ export const ProductPage = (props: Props) => {
     const params = useParams<{ id: string }>();
 
     const [product, setProduct] = React.useState<ProductItemType>();
+    const [isNotificationVisibe, setIsNotificationVisible] = React.useState(false);
     console.log(product);
     React.useEffect(() => {
         const chosenProduct = items.find((item) => item.id.toString() === params.id);
         setProduct(chosenProduct);
     }, [params]);
+
+    const handleTogglingNotification = () => {
+        setIsNotificationVisible((prev) => !prev);
+    };
 
     return (
         <div className="product-page">
@@ -30,7 +37,10 @@ export const ProductPage = (props: Props) => {
                     {/* PRODUCT INFO*/}
                     <div className="info">
                         <ImagePreview images={[product.img, ...product.otherImgs]} />
-                        <ProductInfo product={product} />
+                        <ProductInfo
+                            product={product}
+                            showingNotification={handleTogglingNotification}
+                        />
                     </div>
 
                     {/* TRENDING PRODUCTS*/}
@@ -45,6 +55,19 @@ export const ProductPage = (props: Props) => {
                             listType="horizontal"
                         />
                     </div>
+
+                    {/* NOTIFICATION MESSAGE*/}
+                    <NotificationMessage
+                        isVisible={isNotificationVisibe}
+                        setIsVisible={handleTogglingNotification}
+                        message="Item has been added"
+                        postfix={
+                            <IconCheck
+                                style={{ color: "green" }}
+                                size={30}
+                            />
+                        }
+                    />
                 </div>
             ) : (
                 <Title title="NOT FOUND!" />

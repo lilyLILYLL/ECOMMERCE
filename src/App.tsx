@@ -19,7 +19,7 @@ function App() {
     const handleTogglingSideBar = () => {
         setIsSideBarOpen((prev) => !prev);
     };
-    console.log(isSideBarOpen);
+
     // Scroll to the top of screen when the page os reload
     React.useEffect(() => {
         window.scrollTo(0, 0);

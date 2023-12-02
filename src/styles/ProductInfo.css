@@ -19,6 +19,13 @@
     align-items: center;
     justify-content: space-between;
 }
+@media screen and (max-width: 600px) {
+    .product-info .quantity {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
 
 .product-info .buttons {
     width: 100%;

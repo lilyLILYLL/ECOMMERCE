@@ -25,7 +25,7 @@ export const Counter = ({ count, setCount, size = "md" }: Props) => {
                 className={`${size === "md" ? "square" : ""} icon`}
                 size={30}
                 onClick={handleMinus}
-                style={{ backgroundColor: "transparent" }}
+                style={{ backgroundColor: `${size === "md" ? "white" : "transparent"}` }}
             />
 
             {/* VALUE */}
@@ -38,7 +38,7 @@ export const Counter = ({ count, setCount, size = "md" }: Props) => {
                 className={`${size === "md" ? "square" : ""} icon`}
                 size={30}
                 onClick={() => handleSettingCount(count + 1)}
-                style={{ backgroundColor: "transparent" }}
+                style={{ backgroundColor: `${size === "md" ? "white" : "transparent"}` }}
             />
         </div>
     );

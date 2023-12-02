@@ -8,9 +8,10 @@ import { useAppSelector } from "@/redux";
 
 type Props = {
     product: ProductItemType;
+    showingNotification: () => void;
 };
 
-export const ProductInfo = ({ product }: Props) => {
+export const ProductInfo = ({ product, showingNotification }: Props) => {
     const dispatch = useAppDisptch();
     const [quantity, setQuantity] = React.useState(1);
     const state = useAppSelector((state) => state.cartSlice);
@@ -25,6 +26,7 @@ export const ProductInfo = ({ product }: Props) => {
                 quantity,
             })
         );
+        showingNotification();
     };
     return (
         <div className="product-info">

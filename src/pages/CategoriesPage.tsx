@@ -54,6 +54,11 @@ export const CategoriesPage = (props: Props) => {
                             title={category}
                             onClick={() => handleChoosingCategory(category)}
                             key={index}
+                            style={{
+                                border: `${
+                                    chosenCategory === category ? "2px solid black" : ""
+                                }`,
+                            }}
                         />
                     </NavLink>
                 ))}

@@ -10,12 +10,13 @@ type Props = {
 export const Link = ({ children, to, containerClassName }: Props) => {
     return (
         <NavLink
+            onClick={() => window.scrollTo(0, 0)}
             to={to}
             className={`${containerClassName} link ${({
                 isActive,
             }: {
                 isActive: boolean;
-            }) => (isActive ? "active" : " ")}`}
+            }) => (isActive ? "active-link" : " ")}`}
         >
             {children}
         </NavLink>

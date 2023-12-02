@@ -1,0 +1,35 @@
+.notification-message {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    gap: 2px;
+    align-items: center;
+    font-size: 1.3rem;
+    width: 215px;
+    padding: 0.7rem 2rem;
+    border-radius: 5px;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    top: -8rem;
+    z-index: 9999999;
+}
+.slide {
+    animation: slide 1.2s;
+}
+
+@keyframes slide {
+    0% {
+        top: -8rem;
+    }
+    50% {
+        top: 7rem;
+    }
+    70% {
+        top: 7rem;
+    }
+    100% {
+        top: -8rem;
+    }
+}
