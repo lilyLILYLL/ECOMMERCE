@@ -46,7 +46,7 @@ export const CategoriesPage = () => {
             {/* CATEGORY LIST */}
             <div className="categories-list">
                 {categories.map((category, index) => (
-                    <NavLink href={`/categories/${category}`}>
+                    <NavLink to={`/categories/${category}`}>
                         <Button
                             buttonType="light"
                             title={category}
