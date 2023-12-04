@@ -4,7 +4,6 @@ import { Text, Button } from "@/components/atoms";
 import { Counter } from "@/components/molecules";
 import { useAppDisptch, addToCart } from "@/redux";
 import "@/styles/ProductInfo.css";
-import { useAppSelector } from "@/redux";
 
 type Props = {
     product: ProductItemType;
@@ -14,7 +13,6 @@ type Props = {
 export const ProductInfo = ({ product, showingNotification }: Props) => {
     const dispatch = useAppDisptch();
     const [quantity, setQuantity] = React.useState(1);
-    const state = useAppSelector((state) => state.cartSlice);
 
     const handleAddingAnItemToCart = () => {
         dispatch(

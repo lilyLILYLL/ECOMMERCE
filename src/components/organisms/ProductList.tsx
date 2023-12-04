@@ -1,6 +1,5 @@
 import { ProductItemType } from "@/shared";
 import { ProductItemCard } from "@/components/molecules";
-import { Link } from "@/components/atoms";
 import "@/styles/ProductList.css";
 type Props = {
     items: ProductItemType[];

@@ -1,6 +1,5 @@
 import { ProductItemType } from "@/shared";
 import { Image, Text, Link } from "@/components/atoms";
-import { useLocation } from "react-router-dom";
 
 import "@/styles/ProductItemCard.css";
 type Props = {
@@ -10,8 +9,6 @@ type Props = {
 };
 
 export const ProductItemCard = ({ item, containerClassName }: Props) => {
-    const { pathname } = useLocation();
-
     return (
         <Link
             to={`/categories/product/${item.id}`}

@@ -1,13 +1,11 @@
 import "@/styles/CategoriesPage.css";
 import React from "react";
-import { GoBackIcon, Title, Button, Link } from "@/components/atoms";
+import { GoBackIcon, Title, Button } from "@/components/atoms";
 import { categories, items } from "@/shared";
 import { useNavigate, useParams, NavLink } from "react-router-dom";
 import { ProductList } from "@/components/organisms";
 
-type Props = {};
-
-export const CategoriesPage = (props: Props) => {
+export const CategoriesPage = () => {
     const navigate = useNavigate();
     const { id: params } = useParams();
 

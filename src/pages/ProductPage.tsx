@@ -7,9 +7,7 @@ import { ImagePreview, ProductInfo, ProductList } from "@/components/organisms";
 import { NotificationMessage } from "@/components/molecules";
 import { IconCheck } from "@tabler/icons-react";
 
-type Props = {};
-
-export const ProductPage = (props: Props) => {
+export const ProductPage = () => {
     const params = useParams<{ id: string }>();
 
     const [product, setProduct] = React.useState<ProductItemType>();
